@@ -1,7 +1,11 @@
 import streamlit as st
 import os
 import google.generativeai as genai
-from google.cloud import secretmanager
+try:
+    from google.cloud import secretmanager
+except ImportError:
+    pass
+
 
 # Page Configurations
 st.set_page_config(page_title="Secure Gemini Journal", page_icon="🔐", layout="wide")
